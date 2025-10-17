@@ -1,3 +1,4 @@
+
 export const metadata = {
   title: "Free State Tax Returns",
   description: "Convert your Federal return into a State return using AI — for free."
@@ -18,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               alt="Free State Tax Returns"
               width={140}
               height={140}
-              style={ height: "56px", width: "auto" }
+              style={{ height: "56px", width: "auto" }}
               priority
             />
           </div>

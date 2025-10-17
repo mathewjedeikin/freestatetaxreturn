@@ -1,3 +1,4 @@
+
 export default function Privacy() {
   return (
     <main className="hero">
