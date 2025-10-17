@@ -8,10 +8,10 @@ export async function POST(_request: Request) {
     const fs = await import("node:fs/promises");
     const buf = await fs.readFile(fsPath); // Node Buffer
 
-    // ✅ Wrap Buffer as Uint8Array (compatible with Web Response)
-    const body = new Uint8Array(buf.buffer, buf.byteOffset, buf.byteLength);
+    // ✅ Wrap Buffer in a Blob that Response will accept without type drama
+    const blob = new Blob([buf], { type: "application/pdf" });
 
-    return new Response(body, {
+    return new Response(blob, {
       status: 200,
       headers: {
         "Content-Type": "application/pdf",
