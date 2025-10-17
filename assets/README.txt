@@ -1,1 +1,1 @@
-Replace this file with logo.png and CA-540-blank.pdf before upload.
+Replace this file with your actual logo.png and CA-540-blank.pdf before upload.
