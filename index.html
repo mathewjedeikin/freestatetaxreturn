@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Free State Tax Returns</title>
+<style>
+:root{--brand-primary:#0aa3a3;--text:#0b1f2a;--bg:#fff}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+.header{border-bottom:1px solid rgba(0,0,0,0.06);background:#fff}
+.header-inner{max-width:1000px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:flex-start}
+.logo{height:56px;width:auto}
+.container{max-width:1000px;margin:24px auto;padding:0 20px}
+h1{font-size:28px;line-height:1.2;color:#07161f;margin-bottom:10px}
+p{color:#334;max-width:720px}
+.card{background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:16px}
+.note{font-size:12px;opacity:.75}
+.footer{margin-top:40px;border-top:1px solid rgba(0,0,0,0.06);background:#fff}
+.footer-inner{max-width:1000px;margin:0 auto;padding:18px 20px;font-size:13px;color:#4a4a4a;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.footer a{color:var(--brand-primary);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+.nav{margin-left:auto;display:flex;gap:12px}
+</style>
+<script>
+function onUploadChange(e){
+  if(!e.target.files || !e.target.files[0]) return;
+  const a=document.createElement('a');
+  a.href='/assets/CA-540-blank.pdf';
+  a.download='CA-540.pdf';
+  document.body.appendChild(a); a.click(); a.remove();
+  const msg=document.getElementById('dlmsg');
+  if(msg) msg.style.display='block';
+}
+</script>
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <img class="logo" src="/assets/logo.png" alt="Logo"/>
+  </div>
+</header>
+<main class="container">
+  <h1>Convert your Federal return into a State return using Artificial Intelligence, for free.</h1>
+  <p>Upload your basic federal return (<b>IRS XML preferred</b>, PDF fallback). We’ll draft your California Form 540 in seconds.</p>
+  <div class="card" style="margin-top:18px">
+    <label style="display:block;font-weight:600;margin-bottom:8px">Upload your return (.xml or .pdf)</label>
+    <input type="file" accept=".xml,.pdf" onchange="onUploadChange(event)" />
+    <p id="dlmsg" style="display:none;margin-top:12px">✅ Download started (temporary preview using the blank CA-540).</p>
+    <p class="note" style="margin-top:12px">Not legal advice. Review carefully before filing.</p>
+  </div>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <div>© 2025 Free State Tax Return, Inc., Patent Pending Technology</div>
+    <nav class="nav">
+      <a href="/privacy.html">Privacy Policy</a><span>•</span>
+      <a href="/terms.html">Terms &amp; Conditions</a><span>•</span>
+      <a href="https://freestatetaxreturn.com/blog" target="_blank" rel="noopener">Blog</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
